@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DailyQuotesDisplay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuizViewController" customModule="DailyQuotesDisplay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,14 +74,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="authorLabel" destination="UGc-Q3-AcB" id="yBo-Ns-VAj"/>
-                        <outlet property="cardView" destination="1kC-44-Qc1" id="ohc-VJ-ihY"/>
-                        <outlet property="quoteLabel" destination="4dO-RA-HxR" id="SRb-Is-MvV"/>
+                        <outlet property="authorLabel" destination="UGc-Q3-AcB" id="tpg-s7-QHf"/>
+                        <outlet property="cardView" destination="1kC-44-Qc1" id="UhA-5I-tFS"/>
+                        <outlet property="nextButton" destination="oWJ-QL-rTB" id="Zcy-8U-bzz"/>
+                        <outlet property="quoteLabel" destination="4dO-RA-HxR" id="c5n-tV-Xk4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3526" y="-2464"/>
+            <point key="canvasLocation" x="-4360" y="-2473"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XWC-lh-pDX">
@@ -152,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sM-IF-ebg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2874" y="-2472"/>
+            <point key="canvasLocation" x="-3686" y="-2473"/>
         </scene>
     </scenes>
     <resources>
