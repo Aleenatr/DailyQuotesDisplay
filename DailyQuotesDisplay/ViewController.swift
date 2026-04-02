@@ -22,11 +22,27 @@ class ViewController: UIViewController {
 
     var currentIndex = 0
 
+    @IBOutlet weak var quoteLabel: UILabel!
+    
+    @IBOutlet weak var authorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        showCurrentQuote()
+    }
+    
+    func showCurrentQuote() {
+        let quote = quotes[currentIndex]
+        quoteLabel.text = quote.text
+        authorLabel.text = "— \(quote.author)"
     }
 
-
+    @IBAction func nextQuoteTapped(_ sender: Any) {
+        currentIndex += 1
+        if currentIndex >= quotes.count {
+            currentIndex = 0
+        }
+        showCurrentQuote()
+    }
+    
 }
 

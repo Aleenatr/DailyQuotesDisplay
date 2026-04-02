@@ -57,6 +57,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextQuoteTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uuJ-Cd-0to"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -70,10 +73,14 @@
                             <constraint firstItem="oWJ-QL-rTB" firstAttribute="top" secondItem="1kC-44-Qc1" secondAttribute="bottom" constant="240" id="sTg-0d-SZ0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="UGc-Q3-AcB" id="yBo-Ns-VAj"/>
+                        <outlet property="quoteLabel" destination="4dO-RA-HxR" id="SRb-Is-MvV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-437.40458015267171" y="-254.22535211267606"/>
+            <point key="canvasLocation" x="-2231" y="-1280"/>
         </scene>
     </scenes>
     <resources>
