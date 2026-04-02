@@ -14,14 +14,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="QuizViewController" customModule="DailyQuotesDisplay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kC-44-Qc1">
-                                <rect key="frame" x="20" y="298" width="353" height="156"/>
+                                <rect key="frame" x="20" y="239" width="353" height="224"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="— Author Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGc-Q3-AcB">
-                                        <rect key="frame" x="16" y="119.33333333333331" width="321" height="16.666666666666657"/>
+                                        <rect key="frame" x="16" y="187.33333333333331" width="321" height="16.666666666666657"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWJ-QL-rTB">
-                                <rect key="frame" x="96.666666666666686" y="694" width="200" height="50"/>
+                                <rect key="frame" x="96.666666666666686" y="703" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Uib-l0-9Wo"/>
                                     <constraint firstAttribute="width" constant="200" id="xYn-L1-EZT"/>
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4360" y="-2473"/>
+            <point key="canvasLocation" x="-5204" y="-2515"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XWC-lh-pDX">
@@ -105,6 +105,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="AdB-od-7HH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHP-Uw-uu0">
                                 <rect key="frame" x="86" y="452" width="220" height="55"/>
@@ -119,6 +122,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="8lx-Ea-8pl" kind="presentation" id="kMQ-tx-CvY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Guess Who Said This!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06Y-Wo-Csc">
                                 <rect key="frame" x="20" y="262" width="353" height="26.333333333333314"/>
@@ -153,7 +159,102 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sM-IF-ebg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3686" y="-2473"/>
+            <point key="canvasLocation" x="-4254" y="-2515"/>
+        </scene>
+        <!--Add Quote View Controller-->
+        <scene sceneID="qSb-EK-7bZ">
+            <objects>
+                <viewController id="8lx-Ea-8pl" customClass="AddQuoteViewController" customModule="DailyQuotesDisplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W9u-9j-0Me">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Quote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKi-e3-CuZ">
+                                <rect key="frame" x="20" y="119.00000000000001" width="353" height="28.666666666666671"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter quote here..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t3t-el-9BY">
+                                <rect key="frame" x="20" y="292" width="353" height="140"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="aas-Xm-kEL"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Speaker" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xds-kN-GZq">
+                                <rect key="frame" x="20" y="452" width="353" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Dws-dj-Owg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xon-iv-eNm">
+                                <rect key="frame" x="96.666666666666686" y="526" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="gWf-DO-Dea"/>
+                                    <constraint firstAttribute="height" constant="50" id="wGX-fc-XVA"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save Quote">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveQuoteTapped:" destination="8lx-Ea-8pl" eventType="touchUpInside" id="f1T-PL-uvE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiI-qd-mnP">
+                                <rect key="frame" x="20" y="596" width="81" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Q3W-VD-IRv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="← Back">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backTapped:" destination="8lx-Ea-8pl" eventType="touchUpInside" id="1aw-vV-iin"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R4L-m6-iZo"/>
+                        <color key="backgroundColor" systemColor="tintColor"/>
+                        <constraints>
+                            <constraint firstItem="Xon-iv-eNm" firstAttribute="top" secondItem="xds-kN-GZq" secondAttribute="bottom" constant="86" id="4Mz-pI-yv2"/>
+                            <constraint firstItem="Xon-iv-eNm" firstAttribute="centerX" secondItem="W9u-9j-0Me" secondAttribute="centerX" id="6uu-LJ-E1b"/>
+                            <constraint firstItem="ZKi-e3-CuZ" firstAttribute="top" secondItem="R4L-m6-iZo" secondAttribute="top" constant="60" id="9Bx-sM-VY8"/>
+                            <constraint firstItem="t3t-el-9BY" firstAttribute="top" secondItem="ZKi-e3-CuZ" secondAttribute="bottom" constant="20" id="Hdd-8I-yvx"/>
+                            <constraint firstItem="Xon-iv-eNm" firstAttribute="top" secondItem="xds-kN-GZq" secondAttribute="bottom" constant="30" id="JMB-uA-j6d"/>
+                            <constraint firstItem="t3t-el-9BY" firstAttribute="leading" secondItem="R4L-m6-iZo" secondAttribute="leading" constant="20" id="Jwo-82-jQD"/>
+                            <constraint firstItem="t3t-el-9BY" firstAttribute="top" secondItem="ZKi-e3-CuZ" secondAttribute="bottom" constant="144.33333333333334" id="LRO-Xs-sM9"/>
+                            <constraint firstItem="eiI-qd-mnP" firstAttribute="top" secondItem="Xon-iv-eNm" secondAttribute="bottom" constant="20" id="QPb-4Z-fi7"/>
+                            <constraint firstItem="R4L-m6-iZo" firstAttribute="trailing" secondItem="t3t-el-9BY" secondAttribute="trailing" constant="20" id="SIN-xe-OuZ"/>
+                            <constraint firstItem="ZKi-e3-CuZ" firstAttribute="leading" secondItem="R4L-m6-iZo" secondAttribute="leading" constant="20" id="T4o-Kg-iRb"/>
+                            <constraint firstItem="eiI-qd-mnP" firstAttribute="leading" secondItem="R4L-m6-iZo" secondAttribute="leading" constant="20" id="VGd-BL-Xuz"/>
+                            <constraint firstItem="xds-kN-GZq" firstAttribute="top" secondItem="t3t-el-9BY" secondAttribute="bottom" constant="73" id="a3Q-C3-yLA"/>
+                            <constraint firstItem="xds-kN-GZq" firstAttribute="leading" secondItem="R4L-m6-iZo" secondAttribute="leading" constant="20" id="pnc-y9-qfn"/>
+                            <constraint firstItem="xds-kN-GZq" firstAttribute="top" secondItem="t3t-el-9BY" secondAttribute="bottom" constant="20" id="rUJ-Qf-jMH"/>
+                            <constraint firstItem="R4L-m6-iZo" firstAttribute="trailing" secondItem="xds-kN-GZq" secondAttribute="trailing" constant="20" id="srL-KP-oc6"/>
+                            <constraint firstItem="R4L-m6-iZo" firstAttribute="trailing" secondItem="ZKi-e3-CuZ" secondAttribute="trailing" constant="20" id="vrl-cX-QfT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authorTextField" destination="xds-kN-GZq" id="XKl-qY-aKu"/>
+                        <outlet property="quoteTextView" destination="t3t-el-9BY" id="WoT-ab-jRQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRN-vC-RxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3373" y="-2515"/>
         </scene>
     </scenes>
     <resources>
@@ -163,8 +264,14 @@
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.0" green="0.75294117647058822" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
