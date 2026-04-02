@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6uU-6X-OAv">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
@@ -81,18 +81,95 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2405" y="-2403"/>
+            <point key="canvasLocation" x="-3526" y="-2464"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XWC-lh-pDX">
+            <objects>
+                <viewController id="6uU-6X-OAv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DRb-Cu-MeO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cw-kS-Qh0">
+                                <rect key="frame" x="86" y="369" width="220" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Pc2-51-rGn"/>
+                                    <constraint firstAttribute="width" constant="220" id="SVB-hg-Xgr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="▶  Play">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.32720378488477775" green="0.76942896842956543" blue="0.043530580035018182" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHP-Uw-uu0">
+                                <rect key="frame" x="86" y="452" width="220" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="5wv-Fq-eN2"/>
+                                    <constraint firstAttribute="width" constant="220" id="Afd-uL-INR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="＋  Add Quote">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.60237882767011786" green="0.94039136171340942" blue="0.93080755541602844" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Guess Who Said This!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06Y-Wo-Csc">
+                                <rect key="frame" x="20" y="262" width="353" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test your knowledge of famous quotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeO-uS-GuX">
+                                <rect key="frame" x="20" y="300" width="353" height="16.666666666666686"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9fs-57-T0Q"/>
+                        <color key="backgroundColor" systemColor="tintColor"/>
+                        <constraints>
+                            <constraint firstItem="FeO-uS-GuX" firstAttribute="top" secondItem="06Y-Wo-Csc" secondAttribute="bottom" constant="89.666666666666686" id="2VQ-Yn-bG4"/>
+                            <constraint firstItem="qHP-Uw-uu0" firstAttribute="top" secondItem="9cw-kS-Qh0" secondAttribute="bottom" constant="20" id="3Je-nQ-Fho"/>
+                            <constraint firstItem="9fs-57-T0Q" firstAttribute="trailing" secondItem="06Y-Wo-Csc" secondAttribute="trailing" constant="20" id="CQV-QT-sd7"/>
+                            <constraint firstItem="06Y-Wo-Csc" firstAttribute="leading" secondItem="9fs-57-T0Q" secondAttribute="leading" constant="20" id="EZb-ds-9EM"/>
+                            <constraint firstItem="FeO-uS-GuX" firstAttribute="top" secondItem="06Y-Wo-Csc" secondAttribute="bottom" constant="12" id="Fej-no-MEv"/>
+                            <constraint firstItem="qHP-Uw-uu0" firstAttribute="top" secondItem="9cw-kS-Qh0" secondAttribute="bottom" constant="93" id="Gek-P0-iOF"/>
+                            <constraint firstItem="9cw-kS-Qh0" firstAttribute="top" secondItem="FeO-uS-GuX" secondAttribute="bottom" constant="60" id="Hc8-CT-z6g"/>
+                            <constraint firstItem="9fs-57-T0Q" firstAttribute="trailing" secondItem="FeO-uS-GuX" secondAttribute="trailing" constant="20" id="HsX-kw-oxy"/>
+                            <constraint firstItem="qHP-Uw-uu0" firstAttribute="centerX" secondItem="DRb-Cu-MeO" secondAttribute="centerX" id="PAi-UF-h47"/>
+                            <constraint firstItem="FeO-uS-GuX" firstAttribute="leading" secondItem="9fs-57-T0Q" secondAttribute="leading" constant="20" id="dc1-oW-z7H"/>
+                            <constraint firstItem="06Y-Wo-Csc" firstAttribute="top" secondItem="9fs-57-T0Q" secondAttribute="top" constant="200" id="izP-S1-tal"/>
+                            <constraint firstItem="9cw-kS-Qh0" firstAttribute="centerX" secondItem="DRb-Cu-MeO" secondAttribute="centerX" id="orF-nu-2u0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sM-IF-ebg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2874" y="-2472"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
