@@ -75,12 +75,13 @@
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="UGc-Q3-AcB" id="yBo-Ns-VAj"/>
+                        <outlet property="cardView" destination="1kC-44-Qc1" id="ohc-VJ-ihY"/>
                         <outlet property="quoteLabel" destination="4dO-RA-HxR" id="SRb-Is-MvV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2231" y="-1280"/>
+            <point key="canvasLocation" x="-2405" y="-2403"/>
         </scene>
     </scenes>
     <resources>

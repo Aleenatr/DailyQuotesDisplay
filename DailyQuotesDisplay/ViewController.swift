@@ -23,17 +23,43 @@ class ViewController: UIViewController {
     var currentIndex = 0
 
     @IBOutlet weak var quoteLabel: UILabel!
-    
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var cardView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         showCurrentQuote()
+        styleCard()
+    }
+    
+    func styleCard() {
+        
+        cardView.layer.cornerRadius = 20
+        cardView.clipsToBounds = false
+
+        cardView.layer.shadowColor = UIColor.black.cgColor
+        cardView.layer.shadowOpacity = 0.25
+        cardView.layer.shadowOffset = CGSize(width: 0, height: 6)
+        cardView.layer.shadowRadius = 10
+
+        view.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.2, alpha: 1)
     }
     
     func showCurrentQuote() {
         let quote = quotes[currentIndex]
-        quoteLabel.text = quote.text
-        authorLabel.text = "— \(quote.author)"
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.quoteLabel.alpha = 0
+            self.authorLabel.alpha = 0
+        }) { _ in
+            self.quoteLabel.text = quote.text
+            self.authorLabel.text = "— \(quote.author)"
+
+            UIView.animate(withDuration: 0.4) {
+                self.quoteLabel.alpha = 1
+                self.authorLabel.alpha = 1
+            }
+        }
     }
 
     @IBAction func nextQuoteTapped(_ sender: Any) {
