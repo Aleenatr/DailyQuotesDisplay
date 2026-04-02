@@ -35,10 +35,15 @@ class QuizViewController: UIViewController {
     
     func showCurrentQuote() {
         let quote = quotes[currentIndex]
+        
         quoteLabel.text = quote.text
         authorLabel.text = "— \(quote.author)"
+        
+        quoteLabel.isHidden = false
         authorLabel.isHidden = true
+        
         isShowingQuote = true
+        
         cardView.backgroundColor = UIColor(red: 0.15, green: 0.25, blue: 0.45, alpha: 1)
     }
     
@@ -64,5 +69,10 @@ class QuizViewController: UIViewController {
         currentIndex += 1
         if currentIndex >= quotes.count { currentIndex = 0 }
         showCurrentQuote()
+    }
+    
+    
+    @IBAction func prevButton(_ sender: UIButton) {
+        dismiss(animated: true)
     }
 }
