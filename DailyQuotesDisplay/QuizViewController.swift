@@ -14,13 +14,15 @@ class QuizViewController: UIViewController {
     
     var allQuotes: [Quote] = []
     var quizQuotes: [Quote] = []    // only 3 random quotes used per game
-    
     var currentIndex = 0
     var score = 0
     var isShowingQuote = true
     var hasAnswered = false
     var answerButtons: [UIButton] = []
     var defaultButtonColor: UIColor?
+    var injectedQuotes: [Quote]? = nil   // questions passed from selection screen
+    var categoryIndex: Int = 0
+    var answeredQuestions: [Int: Bool] = [:]  // key = question index, value = whether already scored
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +34,16 @@ class QuizViewController: UIViewController {
         styleCard()
         styleAnswerButtons()
         setupQuiz()
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(flipCard))
-        cardView.addGestureRecognizer(tap)
-        cardView.isUserInteractionEnabled = true
     }
     
     func setupQuiz() {
-            // Pick 3 random quotes for this game session
-        quizQuotes = Array(allQuotes.shuffled().prefix(3))
+        // Use injected quotes if provided, otherwise pick 3 random from all
+        answeredQuestions = [:]
+        if let injected = injectedQuotes {
+            quizQuotes = injected
+        } else {
+            quizQuotes = Array(allQuotes.shuffled().prefix(3))
+        }
         currentIndex = 0
         score = 0
         scoreLabel.text = "Score: 0"
@@ -60,7 +63,7 @@ class QuizViewController: UIViewController {
 
             // Reset card to show quote side
         quoteLabel.text = current.text
-        authorLabel.text = "— \(current.author)"
+        authorLabel.text = current.author
         quoteLabel.isHidden = false
         authorLabel.isHidden = true
         cardView.backgroundColor = UIColor(red: 0.15, green: 0.25, blue: 0.45, alpha: 1)
@@ -69,15 +72,14 @@ class QuizViewController: UIViewController {
         questionLabel.text = "Question \(currentIndex + 1) of \(quizQuotes.count)"
         scoreLabel.text = "Score: \(score)"
 
-            // Generate 2 options — 1 correct + 1 wrong
-        let correctAuthor = current.author
-        let wrongAuthor = allQuotes
-            .filter { $0.author != correctAuthor }
-            .map { $0.author }
-            .shuffled()
-            .first ?? "Unknown"
+        // Use the options stored in the question itself
+        var options = [current.optionA, current.optionB].shuffled()
 
-        let options = [correctAuthor, wrongAuthor].shuffled()
+        // Fallback if options are empty (old data)
+        let correctAuthor = current.author
+        if current.optionA.isEmpty || current.optionB.isEmpty {
+            options = [correctAuthor, "Unknown"]
+        }
 
             // Set button titles and reset their colours
         for (i, btn) in answerButtons.enumerated() {
@@ -139,10 +141,13 @@ class QuizViewController: UIViewController {
                 }
             }
 
-                    // Update score if correct
-            if userAnswer == correctAuthor {
-                self.score += 1
-                self.scoreLabel.text = "Score: \(self.score)"
+            // Only update score if this question hasn't been answered before
+            if self.answeredQuestions[self.currentIndex] == nil {
+                self.answeredQuestions[self.currentIndex] = true
+                if userAnswer == correctAuthor {
+                    self.score += 1
+                    self.scoreLabel.text = "Score: \(self.score)"
+                }
             }
         }
     }
@@ -165,7 +170,7 @@ class QuizViewController: UIViewController {
             self.setupQuiz()
         })
         alert.addAction(UIAlertAction(title: "Go Home", style: .cancel) { _ in
-            self.dismiss(animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
         })
         present(alert, animated: true)
     }
@@ -180,10 +185,6 @@ class QuizViewController: UIViewController {
         }
         currentIndex += 1
         loadQuestion()
-    }
-    
-    @IBAction func backButton(_ sender: UIButton) {
-        dismiss(animated: true)
     }
     
     @IBAction func prevTapped(_ sender: UIButton) {
